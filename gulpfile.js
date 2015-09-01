@@ -38,6 +38,7 @@ gulp.task('watch', function() {
   gulp.watch(['./src/**/*.js'], ['lint','babel']);
   gulp.watch(['./src/scss/*.scss'], ['sass']);
   gulp.watch(['./src/index.html'], ['copy']);
+  gulp.watch(['./src/method.html'], ['copy']);
 });
 
 gulp.task('copy', function () {
@@ -45,6 +46,9 @@ gulp.task('copy', function () {
     .pipe(gulp.dest('dist/img/'));
 
   gulp.src('./src/index.html')
+    .pipe(gulp.dest('dist'));
+
+  gulp.src('./src/method.html')
     .pipe(gulp.dest('dist'));
 });
 

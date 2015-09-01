@@ -1,3 +1,8 @@
+@import "lib/bourbon/bourbon";
+@import "lib/neat/neat";
+
+@import "partials/nav";
+
 $tablet-width: 768px;
 $desktop-width: 1024px;
 
@@ -12,3 +17,16 @@ $desktop-width: 1024px;
     @content;
   }
 }
+
+
+// p {
+//   font-size: 16px;
+//
+//   @include tablet {
+//     font-size: 18px;
+//   }
+//
+//   @include desktop {
+//     font-size: 20px;
+//   }
+// }

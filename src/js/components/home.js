@@ -6,6 +6,19 @@ class Home extends React.Component {
   render() {
     return(
       <div className="wrapper">
+        <div className="hero">
+          <div className="hero-inner">
+            <a href="" class="hero-logo">
+              <img src={"https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png"} alt="Logo Image"/>
+            </a>
+            <div className="hero-copy">
+              <h1>Escape The Drip Machine. Make Better Coffee.</h1>
+              <p>Get started today with one of the options below.</p>
+            </div>
+          </div>
+        </div>
+
+
         <div className="flex-boxes">
           <Link to="chemex" className="flex-box">
             <img src={"https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1_dark.png"} alt=""/>

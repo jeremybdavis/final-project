@@ -3,25 +3,14 @@ import Router from 'react-router';
 import { DefaultRoute, Link, Route, RouteHandler } from 'react-router';
 import $ from 'jquery';
 
-import HomeHandler from './components/home';
-
+import App from './components/app';
 import SiteNav from './components/site-nav';
+
+import HomeHandler from './components/home';
 import ChemexHandler from './components/chemex.js';
 import ProfileHandler from './components/profile';
 import SignInHandler from './components/sign-in';
 import SignUpHandler from './components/sign-up';
-
-
-class App extends React.Component {
-  render() {
-    return(
-      <main>
-      <SiteNav/>
-      <RouteHandler/>
-      </main>
-    )
-  }
-};
 
 let routes = (
   <Route name="app" path="/" handler={App}>

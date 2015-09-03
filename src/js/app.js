@@ -3,6 +3,8 @@ import Router from 'react-router';
 import { DefaultRoute, Link, Route, RouteHandler } from 'react-router';
 import $ from 'jquery';
 
+import HomeHandler from './components/home';
+
 import SiteNav from './components/site-nav';
 import ChemexHandler from './components/chemex.js';
 import ProfileHandler from './components/profile';
@@ -14,38 +16,7 @@ class App extends React.Component {
   render() {
     return(
       <main>
-      <header className="centered-navigation" role="banner">
-        <div className="centered-navigation-wrapper">
-          <Link to="app" className="mobile-logo">
-            <img src={"https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_3_dark.png"} alt="Logo image"/>
-          </Link>
-          <a href="javascript:void(0)" id="js-centered-navigation-mobile-menu" className="centered-navigation-mobile-menu">MENU</a>
-          <nav role="navigation">
-            <ul id="js-centered-navigation-menu" className="centered-navigation-menu show">
-              <li className="nav-link"><Link to="app">Home</Link></li>
-              <li className="nav-link"><Link to="profile">Profile</Link></li>
-              <li className="nav-link logo">
-                <Link to="app" className="logo">
-                  <img src={"https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_3_dark.png"} alt="Logo image"/>
-                </Link>
-              </li>
-              <li className="nav-link"><Link to="signin">Sign In</Link></li>
-              <li className="nav-link"><Link to="signup">Sign up</Link></li>
-            </ul>
-          </nav>
-        </div>
-      </header>
-
-      <div className="wrapper">
-      <div className="flex-boxes">
-        <Link to="chemex" className="flex-box">
-          <img src={"https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1_dark.png"} alt=""/>
-          <h1 className="flex-title">Chemex</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum molestiae fugiat tenetur fugit atque dignissimos, fugiat natus vitae.</p>
-        </Link>
-      </div>
-      </div>
-
+      <SiteNav/>
       <RouteHandler/>
       </main>
     )
@@ -54,6 +25,7 @@ class App extends React.Component {
 
 let routes = (
   <Route name="app" path="/" handler={App}>
+    <DefaultRoute handler={HomeHandler}/>
     <Route name="profile" path="/profile" handler={ProfileHandler}/>
     <Route name="signin" path="/signin" handler={SignInHandler}/>
     <Route name="signup" path="/signup" handler={SignUpHandler}/>

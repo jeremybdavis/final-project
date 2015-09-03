@@ -32,6 +32,7 @@
     "karma-spec-reporter": "0.0.20",
     "phantomjs": "^1.9.17",
     "react": "^0.13.3",
+    "react-router": "^0.13.3",
     "vinyl-source-stream": "^1.1.0"
   },
   "devDependencies": {

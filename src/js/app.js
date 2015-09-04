@@ -7,7 +7,7 @@ import App from './components/app';
 import SiteNav from './components/site-nav';
 
 import HomeHandler from './components/home';
-import ChemexHandler from './components/chemex.js';
+import ChemexHandler from './components/chemex/chemex.js';
 import ProfileHandler from './components/profile';
 import SignInHandler from './components/sign-in';
 import SignUpHandler from './components/sign-up';
@@ -32,24 +32,7 @@ Router.run(routes, function (Handler) {
   React.render(<Handler/>, document.getElementById('app'));
 });
 
-// NAV
-
-$(document).ready(function() {
-  var menuToggle = $('#js-centered-navigation-mobile-menu').unbind();
-  $('#js-centered-navigation-menu').removeClass("show");
-
-  menuToggle.on('click', function(e) {
-    e.preventDefault();
-    $('#js-centered-navigation-menu').slideToggle(function(){
-      if($('#js-centered-navigation-menu').is(':hidden')) {
-        $('#js-centered-navigation-menu').removeAttr('style');
-      }
-    });
-  });
-});
-
-
-// EXPANDER
+// EXPANDERS
 
 $(document).ready(function() {
   var expanderTrigger = document.getElementById("js-expander-trigger");

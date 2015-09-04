@@ -1,6 +1,7 @@
 import React from 'react/addons';
 import Router from 'react-router';
 import { DefaultRoute, Link, Route, RouteHandler } from 'react-router';
+import $ from 'jquery';
 
 import ProfileHandler from './profile';
 import SignInHandler from './sign-in';
@@ -35,3 +36,19 @@ class SiteNav extends React.Component {
 }
 
 export default SiteNav;
+
+// NAV
+
+$(document).ready(function() {
+  var menuToggle = $('#js-centered-navigation-mobile-menu').unbind();
+  $('#js-centered-navigation-menu').removeClass("show");
+
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-centered-navigation-menu').slideToggle(function(){
+      if($('#js-centered-navigation-menu').is(':hidden')) {
+        $('#js-centered-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+});

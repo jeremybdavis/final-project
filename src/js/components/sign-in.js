@@ -29,7 +29,7 @@ class SignIn extends React.Component {
 
   render () {
     return (
-      <section>
+      <section className="sign-in-page">
         <h2>Login</h2>
         <input ref="username" type="text" placeholder="Username"/>
         <input ref="password" type="password" placeholder="Password"/>

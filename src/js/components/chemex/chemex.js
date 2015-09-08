@@ -1,13 +1,14 @@
 import React from 'react';
-import $ from 'jquery';
+import Router from 'react-router';
+import { DefaultRoute, Link, Route, RouteHandler } from 'react-router';
 
-import ChemexTutorial from './chemex-tutorial';
 import ChemexRecipe from './chemex-recipe';
+import TimerHandler from '../timer';
 
 class Chemex extends React.Component {
   render() {
     return(
-      <main className="chemex-page">
+      <main className="method-page">
         <div className="hero-chem">
           <div className="hero-inner">
             <a href="" className="hero-logo">
@@ -20,28 +21,26 @@ class Chemex extends React.Component {
           </div>
         </div>
 
-        <ChemexRecipe/>
+        <section className="main-content">
+          <ChemexRecipe/>
 
-        <div className="expander">
-          <a href="javascript:void(0)" id="js-expander-trigger" className="expander-trigger expander-hidden">About</a>
-          <div id="js-expander-content" className="expander-content">
+          <div className="about">
+            <h1>About</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio mollitia fugiat facilis enim accusamus quisquam aut, repellendus incidunt quod optio facere labore illo numquam ipsum beatae vero debitis, fugit excepturi.</p>
           </div>
-        </div>
 
-          <div className="expander">
-            <a href="javascript:void(0)" id="js-expander-trigger2" className="expander-trigger expander-hidden">Brew Guide</a>
-            <div id="js-expander-content2" className="expander-content">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio mollitia fugiat facilis enim accusamus quisquam aut, repellendus incidunt quod optio facere labore illo numquam ipsum beatae vero debitis, fugit excepturi.</p>
-            </div>
+          <div className="brew">
+            <h1>Brew Guide</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           </div>
 
-          <div className="expander">
-            <a href="javascript:void(0)" id="js-expander-trigger3" className="expander-trigger expander-hidden">Brew Timer</a>
-            <div id="js-expander-content3" className="expander-content">
-              <ChemexTutorial/>
-            </div>
+          <div className="timer-button">
+            <Link to="timer">Make It Now</Link>
           </div>
+
+
+        </section>
+
       </main>
     )
   }

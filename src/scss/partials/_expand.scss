@@ -11,8 +11,6 @@
   $expander-toggle-arrow-size: $expander-toggle-size;
   $expander-toggle-margin: 1em;
 
-  width: 60%;
-
   .expander-trigger {
     @include user-select(none);
     border-bottom: 1px solid $light-gray;
@@ -23,6 +21,7 @@
     margin-bottom: $expander-toggle-size;
     padding-bottom: $expander-toggle-size / 4;
     text-decoration: none;
+    font-size: 1.4rem;
 
     &:before {
       font-size: $expander-arrow-width;
@@ -34,6 +33,7 @@
   .expander-content p {
     color: $base-font-color;
     line-height: $base-line-height;
+    padding: 0 0 1.25em 10px;
   }
 
   .expander-hidden {
@@ -45,5 +45,18 @@
 
   .expander-hidden + .expander-content {
     display: none;
+  }
+
+  .program{
+    text-align: center;
+    padding: 40px;
+
+    .step {
+      text-align: left;
+    }
+
+    h1 {
+      font-size: 3rem;
+    }
   }
 }

@@ -6,6 +6,7 @@ import $ from 'jquery';
 import App from './components/app';
 import SiteNav from './components/site-nav';
 
+
 import HomeHandler from './components/home';
 import ChemexHandler from './components/chemex/chemex.js';
 import ProfileHandler from './components/profile';

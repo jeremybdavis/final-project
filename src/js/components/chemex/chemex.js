@@ -2,11 +2,12 @@ import React from 'react';
 import $ from 'jquery';
 
 import ChemexTutorial from './chemex-tutorial';
+import ChemexRecipe from './chemex-recipe';
 
 class Chemex extends React.Component {
   render() {
     return(
-      <main>
+      <main className="chemex-page">
         <div className="hero-chem">
           <div className="hero-inner">
             <a href="" className="hero-logo">
@@ -19,14 +20,14 @@ class Chemex extends React.Component {
           </div>
         </div>
 
+        <ChemexRecipe/>
+
         <div className="expander">
           <a href="javascript:void(0)" id="js-expander-trigger" className="expander-trigger expander-hidden">About</a>
           <div id="js-expander-content" className="expander-content">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio mollitia fugiat facilis enim accusamus quisquam aut, repellendus incidunt quod optio facere labore illo numquam ipsum beatae vero debitis, fugit excepturi.</p>
           </div>
         </div>
-
-        <ChemexRecipe/>
 
           <div className="expander">
             <a href="javascript:void(0)" id="js-expander-trigger2" className="expander-trigger expander-hidden">Brew Guide</a>
@@ -45,29 +46,5 @@ class Chemex extends React.Component {
     )
   }
 }
-
-var ChemexRecipe = React.createClass({
-  getDefaultProps() {
-    return {
-      "coffee" : "26g",
-      "water" : "416g",
-      "amount": "12oz"
-    };
-  },
-
-  render() {
-    return(
-      <div>
-        <ul>
-          <li>Coffee: {this.props.coffee}</li>
-          <li>Water: {this.props.water}</li>
-          <li>Amount: {this.props.amount}</li>
-        </ul>
-      </div>
-    )
-  }
-})
-
-
 
 export default Chemex;

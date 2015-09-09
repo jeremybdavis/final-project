@@ -1,0 +1,52 @@
+.method-page {
+
+  .main-content {
+    margin: 15px 20px;
+
+    h1{
+      font-size: 2rem;
+      padding: 10px 0;
+    }
+
+    .ingredients {
+
+      margin: 0 0 15px 0;
+
+      li.li-bottom {
+        border-bottom: 2px solid black;
+        padding: 0 0 5px 0;
+        width: 160px;
+      }
+      li.li-last{
+        padding: 5px 0 0 0;
+      }
+    }
+
+    .about {
+
+    }
+
+      .timer-button {
+        a {
+          text-decoration: none;
+          background: #f05f5c;
+          border-radius: 6px;
+          color: white;
+          display: block;
+          font-size: 0.875em;
+          font-weight: bold;
+          letter-spacing: 1px;
+          margin: 15px 0;
+          padding: 1em;
+          text-align: center;
+          text-transform: uppercase;
+
+          &:hover {
+            background: #cc504e;
+          }
+        }
+      }
+
+  }
+
+}

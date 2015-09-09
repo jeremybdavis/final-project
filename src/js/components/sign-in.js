@@ -31,9 +31,16 @@ class SignIn extends React.Component {
     return (
       <section className="sign-in-page">
         <h2>Login</h2>
-        <input ref="username" type="text" placeholder="Username"/>
-        <input ref="password" type="password" placeholder="Password"/>
-        <button ref="login" onClick={this.onSubmit.bind(this)}>Login</button>
+
+          <div className="inputs">
+            <input ref="username" type="text" placeholder="Username"/>
+            <input className="password" ref="password" type="password" placeholder="Password"/>
+          </div>
+
+          <div className="log-btn">
+            <button ref="login" onClick={this.onSubmit.bind(this)}>Login</button>
+          </div>
+
       </section>
     );
   }

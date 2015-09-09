@@ -6,6 +6,9 @@
 @import "partials/flex";
 @import "partials/expand";
 @import "partials/footer";
+@import "partials/method-page";
+@import "partials/program";
+@import "partials/sign-in";
 
 $tablet-width: 768px;
 $desktop-width: 1024px;
@@ -22,105 +25,6 @@ $desktop-width: 1024px;
   }
 }
 
-.method-page {
-
-  .main-content {
-    margin: 15px 20px;
-
-    h1{
-      font-size: 2rem;
-      padding: 10px 0;
-    }
-
-    .ingredients {
-
-      margin: 0 0 15px 0;
-
-      li.li-bottom {
-        border-bottom: 2px solid black;
-        padding: 0 0 5px 0;
-        width: 160px;
-      }
-      li.li-last{
-        padding: 5px 0 0 0;
-      }
-    }
-
-    .about {
-
-    }
-
-      .timer-button {
-        a {
-          text-decoration: none;
-          background: #f05f5c;
-          border-radius: 6px;
-          color: white;
-          display: block;
-          font-size: 0.875em;
-          font-weight: bold;
-          letter-spacing: 1px;
-          margin: 15px 0;
-          padding: 1em;
-          text-align: center;
-          text-transform: uppercase;
-
-          &:hover {
-            background: #cc504e;
-          }
-        }
-      }
-
-  }
-
-}
-
-.program {
-  margin: 25px;
-
-  .program-content{
-    text-align: center;
-
-    h1 {
-      font-size: 3rem;
-      padding: 0 0 5px 0;
-    }
-
-    h2 {
-      font-size: 2rem;
-      padding: 0 0 5px 15px;
-      text-align: left;
-    }
-
-    h3 {
-      font-size: 1.5rem;
-      text-align: left;
-      padding: 0 0 10px 15px;
-    }
-
-    .timer {
-      font-size: 2.2rem;
-      padding: 0 0 15px 0;
-    }
-
-    button {
-      font-size: 1rem;
-      border-radius: 5px;
-      margin: 0 0 15px 0;
-      cursor: pointer;
-    }
-
-    .reset-btn {
-      margin: 0 0 0 10px;
-    }
-
-    h5 {
-      font-size: 1.3rem;
-      padding: 0 0 5px 0;
-    }
-  }
-
-}
 
 
 // p {

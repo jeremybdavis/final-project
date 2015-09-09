@@ -18,11 +18,16 @@ class Home extends React.Component {
           </div>
         </div>
 
-
         <div className="flex-boxes">
           <Link to="chemex" className="flex-box">
             <img src={"https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1_dark.png"} alt=""/>
             <h1 className="flex-title">Chemex</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum molestiae fugiat tenetur fugit atque dignissimos, fugiat natus vitae.</p>
+          </Link>
+
+          <Link to="v60" className="flex-box">
+            <img src={"https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1_dark.png"} alt=""/>
+            <h1 className="flex-title">V60</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum molestiae fugiat tenetur fugit atque dignissimos, fugiat natus vitae.</p>
           </Link>
         </div>

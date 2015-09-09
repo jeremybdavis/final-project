@@ -39,12 +39,18 @@ class SignUp extends React.Component {
 
   render () {
     return (
-      <section>
+      <section className="sign-up-page">
         <h2>Register</h2>
-        <input ref="username" type="text" placeholder="Username"/>
-        <input ref="email" type="email" placeholder="E-mail"/>
-        <input ref="password" type="password" placeholder="Password"/>
-        <button ref="login" onClick={this.onSubmit.bind(this)}>Register</button>
+        <div className="inputs">
+          <input ref="username" type="text" placeholder="Username"/>
+          <input className="email" ref="email" type="email" placeholder="E-mail"/>
+          <input className="password" ref="password" type="password" placeholder="Password"/>
+        </div>
+
+        <div className="log-btn">
+          <button ref="login" onClick={this.onSubmit.bind(this)}>Register</button>
+        </div>
+
       </section>
     );
   }

@@ -9,6 +9,7 @@ import SiteNav from './components/site-nav';
 
 import HomeHandler from './components/home';
 import ChemexHandler from './components/chemex/chemex.js';
+import V60Handler from './components/v60/v60.js';
 import ProfileHandler from './components/profile';
 import SignInHandler from './components/sign-in';
 import SignUpHandler from './components/sign-up';
@@ -21,10 +22,11 @@ let routes = (
     <Route name="signin" path="/signin" handler={SignInHandler}/>
     <Route name="signup" path="/signup" handler={SignUpHandler}/>
     <Route name="chemex" path="/chemex" handler={ChemexHandler}/>
+    <Route name="v60" path="/v60" handler={V60Handler}/>
     <Route name="timer" path="/timer" handler={TimerHandler}/>
   </Route>
 
-  // <Route name="v60" path="/v60" handler={MethodHandler}/>
+
   // <Route name="frenchPress" path="/frenchpress" handler={MethodHandler} />
   // <Route name="aeropress" path="/aeropress" handler={MethodHandler} />
   // <Route name="chemexIced" path="/chemexIced" handler={MethodHandler}/>
@@ -33,33 +35,4 @@ let routes = (
 
 Router.run(routes, function (Handler) {
   React.render(<Handler/>, document.getElementById('app'));
-});
-
-// EXPANDERS
-
-$(document).ready(function() {
-  var expanderTrigger = document.getElementById("js-expander-trigger");
-  var expanderContent = document.getElementById("js-expander-content");
-
-  $('#js-expander-trigger').click(function(){
-    $(this).toggleClass("expander-hidden");
-  });
-});
-
-$(document).ready(function() {
-  var expanderTrigger = document.getElementById("js-expander-trigger2");
-  var expanderContent = document.getElementById("js-expander-content2");
-
-  $('#js-expander-trigger2').click(function(){
-    $(this).toggleClass("expander-hidden");
-  });
-});
-
-$(document).ready(function() {
-  var expanderTrigger = document.getElementById("js-expander-trigger3");
-  var expanderContent = document.getElementById("js-expander-content3");
-
-  $('#js-expander-trigger3').click(function(){
-    $(this).toggleClass("expander-hidden");
-  });
-});
+}); 

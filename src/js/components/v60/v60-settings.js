@@ -24,7 +24,7 @@ class V60Settings extends React.Component {
             onChange={this.onChange.bind(this)}
           />
         </p>
-        
+
         <p>Coffee
         <input
           ref="coffee"
@@ -45,7 +45,7 @@ class V60Settings extends React.Component {
         <p>Yield:
         <input
           ref="yield"
-          value={((this.props.coffee * this.props.ratio) - (this.props.coffee * 2)) * 0.035274}
+          value={Math.round(((this.props.coffee * this.props.ratio) - (this.props.coffee * 2)) * 0.035274)}
           placeholder="water quantity in oz"
           onChange={this.onChange.bind(this)}
           />

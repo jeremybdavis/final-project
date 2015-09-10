@@ -1,7 +1,6 @@
 import React from 'react';
 import Router from 'react-router';
 import { DefaultRoute, Link, Route, RouteHandler } from 'react-router';
-import $ from 'jquery';
 
 import App from './components/app';
 import SiteNav from './components/site-nav';
@@ -35,4 +34,4 @@ let routes = (
 
 Router.run(routes, function (Handler) {
   React.render(<Handler/>, document.getElementById('app'));
-}); 
+});

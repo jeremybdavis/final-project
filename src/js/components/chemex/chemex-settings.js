@@ -19,6 +19,7 @@ class ChemexSettings extends React.Component {
           Ratio (Coffee to Water) 1:
           <input
             ref="ratio"
+            type="number"
             value={this.props.ratio}
             placeholder="Coffee to Water Ratio"
             onChange={this.onChange.bind(this)}
@@ -51,7 +52,7 @@ class ChemexSettings extends React.Component {
           Yield:
           <input
             ref="yield"
-            value={((this.props.coffee * this.props.ratio) - (this.props.coffee * 2)) * 0.035274}
+            value={Math.round(((this.props.coffee * this.props.ratio) - (this.props.coffee * 2)) * 0.035274)}
             placeholder="water quantity in oz"
             onChange={this.onChange.bind(this)}
             />

@@ -60,7 +60,7 @@ var MethodSelector = React.createClass( {
 										onSettingsChange={this.onSettingsChange}
 									/>
 		} else if (this.state.selectValue === 'v60') {
-			settings = <V60Settings coffee={this.state.coffee} water={this.state.water} yield={this.state.yield} ref="v60" onSettingsChange={this.onSettingsChange}/>
+			settings = <V60Settings coffee={this.state.coffee} water={this.state.water} yield={this.state.yield} ratio={this.state.ratio} ref="v60" onSettingsChange={this.onSettingsChange}/>
 		}
 
 		return (

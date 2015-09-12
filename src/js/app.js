@@ -12,7 +12,7 @@ import V60Handler from './components/v60/v60.js';
 import ProfileHandler from './components/profile';
 import SignInHandler from './components/sign-in';
 import SignUpHandler from './components/sign-up';
-import TimerHandler from './components/timer';
+import MethodSelectorHandler from './components/method-selector';
 
 let routes = (
   <Route name="app" path="/" handler={App}>
@@ -22,7 +22,7 @@ let routes = (
     <Route name="signup" path="/signup" handler={SignUpHandler}/>
     <Route name="chemex" path="/chemex" handler={ChemexHandler}/>
     <Route name="v60" path="/v60" handler={V60Handler}/>
-    <Route name="timer" path="/timer" handler={TimerHandler}/>
+    <Route name="timer" path="/timer" handler={MethodSelectorHandler}/>
   </Route>
 
 

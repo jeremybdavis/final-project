@@ -2,8 +2,6 @@ import React from 'react';
 import Router from 'react-router';
 import { DefaultRoute, Link, Route, RouteHandler } from 'react-router';
 
-import TimerHandler from '../timer';
-
 class V60 extends React.Component {
   render() {
     return (

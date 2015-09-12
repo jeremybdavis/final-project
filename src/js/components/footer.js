@@ -11,9 +11,8 @@ class Footer extends React.Component {
         </div>
 
           <ul>
-            <li><a href="javascript:void(0)">About</a></li>
-            <li><a href="javascript:void(0)">Contact</a></li>
-            <li><a href="javascript:void(0)">Products</a></li>
+            <li><a href="javascript:void(0)">App</a></li>
+            <li><a href="javascript:void(0)">Profile</a></li>
           </ul>
 
           <div className="footer-secondary-links">

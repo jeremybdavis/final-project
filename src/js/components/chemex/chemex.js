@@ -3,7 +3,6 @@ import Router from 'react-router';
 import { DefaultRoute, Link, Route, RouteHandler } from 'react-router';
 
 import ChemexRecipe from './chemex-recipe';
-import TimerHandler from '../timer';
 
 class Chemex extends React.Component {
   render() {
@@ -22,7 +21,14 @@ class Chemex extends React.Component {
         </div>
 
         <section className="main-content">
-          <ChemexRecipe/>
+          <div className="ingredients">
+            <h4>What You'll Need</h4>
+            <ul>
+              <li>26 grams of Coffee</li>
+              <li>416 grams of Water</li>
+              <li>Yields 12oz</li>
+            </ul>
+          </div>
 
           <div className="about">
             <h1>About</h1>

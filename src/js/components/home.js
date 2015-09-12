@@ -18,18 +18,51 @@ class Home extends React.Component {
           </div>
         </div>
 
-        <div className="flex-boxes">
-          <Link to="chemex" className="flex-box">
-            <img src={"https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1_dark.png"} alt=""/>
-            <h1 className="flex-title">Chemex</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum molestiae fugiat tenetur fugit atque dignissimos, fugiat natus vitae.</p>
-          </Link>
+        <div className="method-boxes">
+          <div className="method-box">
+            <Link to="chemex">
+              <img src={"img/chemex-home.jpg"} />
+              <div className="method-bg-color">
+                <div className="wi-100-h-100">
+                  <div className="wi-100-h-50">
+                    <div className="method-title">
+                      <h1>Chemex</h1>
+                    </div>
+                  </div>
+                  <div className="wi-100-h-50">
+                    <div className="method-btn-container">
+                      <div className="method-btn">
+                        Start Guide
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </div>
 
-          <Link to="v60" className="flex-box">
-            <img src={"https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1_dark.png"} alt=""/>
-            <h1 className="flex-title">V60</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum molestiae fugiat tenetur fugit atque dignissimos, fugiat natus vitae.</p>
-          </Link>
+          <div className="method-box">
+            <Link to="v60">
+              <img src={"img/v60-home.jpg"} />
+              <div className="method-bg-color">
+                <div className="wi-100-h-100">
+                  <div className="wi-100-h-50">
+                    <div className="method-title">
+                      <h1>V60</h1>
+                    </div>
+                  </div>
+                  <div className="wi-100-h-50">
+                    <div className="method-btn-container">
+                      <div className="method-btn">
+                        Start Guide
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </div>
+
         </div>
       </div>
     )

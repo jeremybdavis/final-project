@@ -6,7 +6,7 @@ class FrenchPress extends React.Component {
   render() {
     return(
       <main className="method-page">
-        <div className="hero-chem">
+        <div className="hero-fp">
           <div className="hero-inner">
             <a href="" className="hero-logo">
               <img src={"https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png"} alt="Logo Image"/>

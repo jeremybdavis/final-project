@@ -35,6 +35,7 @@
       h1 {
         color: $hero-color;
         font-size: 1.9em;
+        font-weight: 600;
         margin-bottom: 0.5em;
 
         @include media($large-screen) {
@@ -49,7 +50,7 @@
         margin: 0 auto 3em auto;
 
         @include media($large-screen) {
-          font-size: 1.5em;
+          font-size: 1.4em;
           max-width: 52%;
         }
       }
@@ -92,6 +93,7 @@
       h1 {
         color: $hero-color;
         font-size: 1.9em;
+        font-weight: 600;
         margin-bottom: 0.5em;
 
         @include media($large-screen) {
@@ -106,7 +108,7 @@
         margin: 0 auto 3em auto;
 
         @include media($large-screen) {
-          font-size: 1.5em;
+          font-size: 1.4em;
           max-width: 52%;
         }
       }
@@ -149,6 +151,7 @@
       h1 {
         color: $hero-color;
         font-size: 1.9em;
+        font-weight: 600;
         margin-bottom: 0.5em;
 
         @include media($large-screen) {
@@ -163,7 +166,7 @@
         margin: 0 auto 3em auto;
 
         @include media($large-screen) {
-          font-size: 1.5em;
+          font-size: 1.4em;
           max-width: 52%;
         }
       }

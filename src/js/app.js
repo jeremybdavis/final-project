@@ -9,6 +9,7 @@ import SiteNav from './components/site-nav';
 import HomeHandler from './components/home';
 import ChemexHandler from './components/chemex/chemex.js';
 import V60Handler from './components/v60/v60.js';
+import FrenchPressHandler from './components/french-press/french-press';
 import ProfileHandler from './components/profile';
 import SignInHandler from './components/sign-in';
 import SignUpHandler from './components/sign-up';
@@ -22,11 +23,12 @@ let routes = (
     <Route name="signup" path="/signup" handler={SignUpHandler}/>
     <Route name="chemex" path="/chemex" handler={ChemexHandler}/>
     <Route name="v60" path="/v60" handler={V60Handler}/>
+    <Route name="frenchPress" path="/frenchpress" handler={FrenchPressHandler} />
     <Route name="timer" path="/timer" handler={MethodSelectorHandler}/>
   </Route>
 
 
-  // <Route name="frenchPress" path="/frenchpress" handler={MethodHandler} />
+
   // <Route name="aeropress" path="/aeropress" handler={MethodHandler} />
   // <Route name="chemexIced" path="/chemexIced" handler={MethodHandler}/>
   // <Route name="v60Iced" path="/v60Iced" handler={MethodHandler}/>

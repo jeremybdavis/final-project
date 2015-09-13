@@ -21,7 +21,7 @@ class Home extends React.Component {
         <div className="method-boxes">
           <div className="method-box">
             <Link to="chemex">
-              <img src={"img/chemex-home.jpg"} />
+              <img src={"img/chemex.jpg"} />
               <div className="method-bg-color">
                 <div className="wi-100-h-100">
                   <div className="wi-100-h-50">
@@ -49,6 +49,28 @@ class Home extends React.Component {
                   <div className="wi-100-h-50">
                     <div className="method-title">
                       <h1>V60</h1>
+                    </div>
+                  </div>
+                  <div className="wi-100-h-50">
+                    <div className="method-btn-container">
+                      <div className="method-btn">
+                        Start Guide
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </div>
+
+          <div className="method-box">
+            <Link to="frenchPress">
+              <img src={"img/french-press.jpg"} />
+              <div className="method-bg-color">
+                <div className="wi-100-h-100">
+                  <div className="wi-100-h-50">
+                    <div className="method-title">
+                      <h1>French Press</h1>
                     </div>
                   </div>
                   <div className="wi-100-h-50">

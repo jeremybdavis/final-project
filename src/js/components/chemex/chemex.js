@@ -22,7 +22,7 @@ class Chemex extends React.Component {
 
         <section className="main-content">
           <div className="ingredients">
-            <h4>What You'll Need</h4>
+            <h1>What You'll Need</h1>
             <ul>
               <li>26 grams of Coffee</li>
               <li>416 grams of Water</li>

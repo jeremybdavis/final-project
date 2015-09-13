@@ -6,7 +6,17 @@ class V60 extends React.Component {
   render() {
     return (
       <main className="method-page">
-        <h1>V60 Page</h1>
+        <div className="hero-v60">
+          <div className="hero-inner">
+            <a href="" className="hero-logo">
+              <img src={"https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png"} alt="Logo Image"/>
+            </a>
+            <div className="hero-copy">
+              <h1>V60</h1>
+              <p>0 to 100. Real Quick.</p>
+            </div>
+          </div>
+        </div>
 
           <section className="main-content">
 

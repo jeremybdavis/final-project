@@ -29,7 +29,7 @@
       .timer-button {
         a {
           text-decoration: none;
-          background: #f05f5c;
+          background: darken( $light-blue, 10% );
           border-radius: 6px;
           color: white;
           display: block;
@@ -42,7 +42,7 @@
           text-transform: uppercase;
 
           &:hover {
-            background: #cc504e;
+            background: darken($light-blue, 5% );
           }
         }
       }

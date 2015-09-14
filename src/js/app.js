@@ -3,16 +3,15 @@ import Router from 'react-router';
 import { DefaultRoute, Link, Route, RouteHandler } from 'react-router';
 
 import App from './components/app';
-import SiteNav from './components/site-nav';
 
 
-import HomeHandler from './components/home';
+import HomeHandler from './components/views/home';
 import ChemexHandler from './components/chemex/chemex.js';
 import V60Handler from './components/v60/v60.js';
 import FrenchPressHandler from './components/french-press/french-press';
-import ProfileHandler from './components/profile';
-import SignInHandler from './components/sign-in';
-import SignUpHandler from './components/sign-up';
+import ProfileHandler from './components/views/profile';
+import SignInHandler from './components/views/sign-in';
+import SignUpHandler from './components/views/sign-up';
 import MethodSelectorHandler from './components/method-selector';
 
 let routes = (

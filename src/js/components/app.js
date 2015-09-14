@@ -1,8 +1,8 @@
 import React from 'react';
 import Router, { RouteHandler } from 'react-router';
 
-import SiteNav from './site-nav';
-import Footer from './footer';
+import SiteNav from './views/site-nav';
+import Footer from './views/footer';
 
 class App extends React.Component {
   render() {

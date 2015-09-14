@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
-import Parse from '../parse';
-import User from '../user';
+import Parse from '../../parse';
+import User from '../../user';
 
 class SignUp extends React.Component {
   onSubmit() {

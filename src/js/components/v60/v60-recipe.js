@@ -1,8 +1,7 @@
 import React from 'react';
 
-import MethodSelector from '../method-selector';
 
-class V60Recipe extends MethodSelector {
+class V60Recipe extends React.Component {
   render() {
     return(
 

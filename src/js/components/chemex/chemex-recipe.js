@@ -1,8 +1,6 @@
 import React from 'react';
 
-import MethodSelector from '../method-selector';
-
-class ChemexRecipe extends MethodSelector {
+class ChemexRecipe extends React.Component {
   render() {
     return(
 

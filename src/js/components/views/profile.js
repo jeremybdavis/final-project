@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import User from '../user';
+import User from '../../user';
 
 class Profile extends React.Component {
   render () {

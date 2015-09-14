@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Parse from '../parse';
-import User from '../user';
+import Parse from '../../parse';
+import User from '../../user';
 
 class SignIn extends React.Component {
   onSubmit() {

@@ -3,12 +3,12 @@
   $action-color: #b3a79b !default;
   $medium-screen: em(640) !default;
   $large-screen: em(860) !default;
-  // $footer-background: desaturate(darken($action-color, 20%), 30%);
+  $footer-background: desaturate(darken($action-color, 5%), 5%);
   $footer-color: white;
-  $footer-link-color: transparentize($footer-color, 0.6);
+  $footer-link-color: transparentize($footer-color, 0.4);
   $footer-disclaimer-color: transparentize($footer-color, 0.6);
 
-  background: $action-color;
+  background: $footer-background;
   padding: $base-spacing;
   width: 100%;
   display: inline-block;
@@ -31,6 +31,7 @@
     line-height: 1.5em;
     margin: 0 0 1em 0;
     padding: 0;
+    font-weight: 200;
 
     @include media($large-screen) {
       float: left;

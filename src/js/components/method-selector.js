@@ -85,7 +85,7 @@ var MethodSelector = React.createClass( {
 			    alert('Failed to create new object, with error code: ' + error.message);
   			}
 			})
-    } alert("Please log in to use this feature.")
+    } else {alert("Please log in to use this feature.")}
 	},
 
 	// TIMER

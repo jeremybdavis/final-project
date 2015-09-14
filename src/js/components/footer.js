@@ -1,4 +1,6 @@
 import React from 'react/addons';
+import Router from 'react-router';
+import { Link } from 'react-router';
 
 class Footer extends React.Component {
   render() {
@@ -11,7 +13,7 @@ class Footer extends React.Component {
         </div>
 
           <ul>
-            <li><a href="javascript:void(0)">App</a></li>
+            <li><Link to="timer">App</Link></li>
             <li><a href="javascript:void(0)">Profile</a></li>
           </ul>
 

@@ -1,9 +1,11 @@
 import React from 'react';
 import {_} from 'lodash';
 import Select from 'react-select';
+import Parse from '../parse';
 import ChemexSettings from './chemex/chemex-settings';
 import ChemexRecipe from './chemex/chemex-recipe';
 import V60Settings from './v60/v60-settings';
+import User from '../user';
 
 function logChange() {
 	console.log.apply(console, [].concat(['Select value changed:'], Array.prototype.slice.apply(arguments)));
@@ -33,11 +35,13 @@ var MethodSelector = React.createClass( {
 		logChange('Method changed to ' + newValue);
 		let defaults = {
 			chemex: {
+				ratio: 16,
 				coffee: 25,
 				water: 400,
 				yield: 12
 			},
 			v60: {
+				ratio: 16,
 				coffee: 30,
 				water: 500,
 				yield: 13
@@ -60,6 +64,28 @@ var MethodSelector = React.createClass( {
 	onSettingsChange(data) {
 		console.log(data);
 		this.setState(data);
+	},
+
+	saveRecipe() {
+		var CoffeeRecipe = Parse.Object.extend("CoffeeRecipe");
+		var coffeeRecipe = new CoffeeRecipe();
+
+		coffeeRecipe.set("title", this.state.selectValue);
+		coffeeRecipe.set("ratio", this.state.ratio);
+		coffeeRecipe.set("coffee", this.state.coffee);
+		coffeeRecipe.set("water", this.state.water);
+		coffeeRecipe.set("yield", this.state.yield);
+
+		if (User.loggedIn) {
+			coffeeRecipe.save(null, {
+			  success: function(coffeeRecipe) {
+			    alert(`Thanks ${User.username}. Your recipe has been saved to your profile.`);
+			  },
+			  error: function(coffeeRecipe, error) {
+			    alert('Failed to create new object, with error code: ' + error.message);
+  			}
+			})
+    } alert("Please log in to use this feature.")
 	},
 
 	// TIMER
@@ -206,7 +232,7 @@ handleResetClick() {
 
 							</div>
 
-							<button>Save This Recipe</button>
+							<button type="button" onClick={this.saveRecipe}>Save This Recipe</button>
 
 						</div>
 

@@ -3,10 +3,7 @@ import Select from 'react-select';
 import Parse from '../parse';
 import Timer from './timer';
 import Settings from './settings';
-import ChemexSettings from './chemex/chemex-settings';
-import ChemexRecipe from './chemex/chemex-recipe';
-import V60Settings from './v60/v60-settings';
-import V60Recipe from './v60/v60-recipe';
+import Recipe from './recipe';
 import User from '../user';
 
 function logChange() {
@@ -27,10 +24,10 @@ var MethodSelector = React.createClass( {
 
   getInitialState () {
     return {
-      searchable: this.props.searchable,
-      selectValue: 'Chemex',
+      selectValue: null,
+			settings: null,
 			secondsElapsed: 0,
-			recipes: null
+			recipes: []
     };
   },
 
@@ -39,98 +36,49 @@ var MethodSelector = React.createClass( {
 		var query = new Parse.Query(CoffeeRecipe);
 
 		query.find({
-			success: results => {
-				let recipes = results.map(recipe => {
-					return {
-						value: recipe.id,
-						label: recipe.attributes.title,
-					};
-				});
-
+			success: recipes => {
 				this.setState({
-					recipes: recipes
+					recipes: recipes,
+					selectValue: recipes[0]
 				});
 			}
 		});
 	},
 
-  updateValue (newValue) {
-		logChange('Method changed to ' + newValue);
-		let defaults = {
-			chemex: {
-				ratio: 16,
-				coffee: 25,
-				water: 400,
-				yield: 12
-			},
-			v60: {
-				ratio: 16,
-				coffee: 30,
-				water: 500,
-				yield: 13
-			}
-		};
+  updateValue (selectValue) {
+		let selected = this.state.recipes.filter(recipe => {
+			return recipe.id === selectValue;
+		});
 
-		if (this.state.selectValue !== newValue) {
-			let data = Object.assign({}, defaults[newValue], {
-				selectValue: newValue || null
-			});
-
-			this.setState(data);
-		}
+		this.setState({
+			selectValue: selected[0]
+		});
 	},
 
   focusMethodSelect () {
     this.refs.stateSelect.focus();
   },
 
-	onSettingsChange(data) {
-		this.setState(data);
-	},
-
-	saveRecipe() {
-		var CoffeeRecipe = Parse.Object.extend("CoffeeRecipe");
-		var coffeeRecipe = new CoffeeRecipe();
-		var query = new Parse.Query(CoffeeRecipe);
-		let user = query.relationship('user');
-		coffeeRecipe.set("title", this.state.selectValue);
-		coffeeRecipe.set("Ratio", this.state.ratio);
-		coffeeRecipe.set("Coffee", this.state.coffee);
-		coffeeRecipe.set("Water", this.state.water);
-		coffeeRecipe.set("Yield", this.state.yield);
-		user.add(Parse.User.current());
-
-		if (User.loggedIn) {
-			coffeeRecipe.save(null, {
-			  success: function(coffeeRecipe) {
-			    alert(`Thanks ${User.username}. Your recipe has been saved to your profile.`);
-			  },
-			  error: function(coffeeRecipe, error) {
-			    alert('Failed to create new object, with error code: ' + error.message);
-  			}
-			})
-    } else {alert("Please log in to use this feature.")}
+	onSettingsChange(settings) {
+		this.setState({
+			settings: settings
+		});
 	},
 
   render () {
 		let props = this.props;
-		let settings;
-		let recipe;
+		let selectValue;
 
 		if (this.state.selectValue) {
-			settings = <ChemexSettings
-										coffee={this.state.coffee}
-										water={this.state.water}
-										yield={this.state.yield}
-										ratio={this.state.ratio}
-										ref="chemex"
-										onSettingsChange={this.onSettingsChange}
-									/>
-			recipe = <ChemexRecipe
-								coffee={this.state.coffee}
-								secondsElapsed={this.state.secondsElapsed}
-						/>
+			selectValue = this.state.selectValue.id;
 		}
+
+		let options = this.state.recipes.map(recipe => {
+			return {
+				value: recipe.id,
+				label: recipe.attributes.title,
+			};
+		});
 
 		return (
 			<div className="program">
@@ -145,11 +93,11 @@ var MethodSelector = React.createClass( {
 
 							<Select
 								ref="stateSelect"
-								options={this.state.recipes}
+								options={options}
 								disabled={this.state.disabled}
-								value={this.state.selectValue}
+								value={selectValue}
 								onChange={this.updateValue}
-								searchable={this.state.searchable}>
+								searchable={true}>
 
 								<span className="Select-arrow-zone"></span>
 								<span className="Select-arrow"></span>
@@ -157,18 +105,18 @@ var MethodSelector = React.createClass( {
 							</Select>
 
 							<h3>Recommended Settings</h3>
-							{settings}
+
+								<Settings
+									ref="settings"
+									recipe={this.state.selectValue}
+									onSettingsChange={this.onSettingsChange}
+								/>
 
 							<div className="timer">
-
 								<Timer/>
-
-								{recipe}
-
 							</div>
 
-							<button type="button" onClick={this.saveRecipe}>Save This Recipe</button>
-
+							<Recipe recipe={this.state.selectValue} settings={this.state.settings}/>
 						</div>
 
 				</div>

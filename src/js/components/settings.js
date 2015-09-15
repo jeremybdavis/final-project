@@ -1,26 +1,62 @@
 import React from 'react';
 
 class Settings extends React.Component {
-  
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      coffee: 0,
+      ratio: 0,
+      water: 0,
+      yielded: 0
+    };
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.recipe) {
+      this.setState({
+        coffee: nextProps.recipe.get('Coffee'),
+        ratio: nextProps.recipe.get('Ratio'),
+        water: nextProps.recipe.get('Water'),
+        yielded: nextProps.recipe.get('Yield')
+      });
+    }
+  }
+
   onChange() {
     let data =  {
       coffee: React.findDOMNode(this.refs.coffee).value,
-      water: React.findDOMNode(this.refs.water).value,
-      yield: React.findDOMNode(this.refs.yield).value,
       ratio: React.findDOMNode(this.refs.ratio).value
-    }
-    this.props.onSettingsChange(data);
+    };
+
+    this.setState({
+      coffee: data.coffee,
+      ratio: data.ratio,
+      water: data.ratio * data.coffee,
+      yielded: Math.round(((data.coffee * data.ratio) - (data.coffee * 2)) * 0.035274)
+    });
+
+    // this.props.onSettingsChange(this.state);
   }
   render() {
+    if (!this.props.recipe) {
+      return <div>Loading....</div>
+    }
+
+    let ratio = this.state.ratio;
+    let coffee = this.state.coffee;
+    let water = this.state.water;
+    let yielded = this.state.yielded;
+
     return (
       <div className="method-settings">
-
+        <h3>Settings for {this.props.recipe.get('title')}</h3>
         <p>
           Ratio (Coffee to Water) 1:
           <input
             ref="ratio"
             type="number"
-            value={this.props.ratio}
+            value={ratio}
             placeholder="Coffee to Water Ratio"
             onChange={this.onChange.bind(this)}
           />
@@ -30,7 +66,8 @@ class Settings extends React.Component {
           Coffee
           <input
             ref="coffee"
-            value={this.props.coffee}
+            type="number"
+            value={coffee}
             placeholder="coffee quantity in grams"
             onChange={this.onChange.bind(this)}
             />
@@ -38,31 +75,19 @@ class Settings extends React.Component {
         </p>
 
         <p>
-          Water
-          <input
-            ref="water"
-            value={this.props.coffee * this.props.ratio}
-            placeholder="water quantity in grams"
-            onChange={this.onChange.bind(this)}
-            />
-          g
+          Water {water}g
         </p>
 
         <p>
-          Yield:
-          <input
-            ref="yield"
-            value={Math.round(((this.props.coffee * this.props.ratio) - (this.props.coffee * 2)) * 0.035274)}
-            placeholder="water quantity in oz"
-            onChange={this.onChange.bind(this)}
-            />
-          oz
+          Yield: {yielded}oz
         </p>
-
       </div>
     )
   }
 }
 
+Settings.defaultProps = {
+  recipe: null
+};
 
 export default Settings;

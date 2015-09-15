@@ -1,7 +1,7 @@
 import React from 'react';
 
 class Settings extends React.Component {
-
+  
   onChange() {
     let data =  {
       coffee: React.findDOMNode(this.refs.coffee).value,

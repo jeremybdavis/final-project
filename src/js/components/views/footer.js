@@ -20,20 +20,8 @@ class Footer extends React.Component {
           <div className="footer-secondary-links">
 
             <ul>
-              <li><a href="javascript:void(0)">Terms and Conditions</a></li>
-              <li><a href="javascript:void(0)">Privacy Policy</a></li>
-            </ul>
-
-            <ul className="footer-social">
-              <li><a href="javascript:void(0)">
-                <img src={"https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/facebook-logo-circle.png"} alt="Facebook"/>
-                </a></li>
-              <li><a href="javascript:void(0)">
-                <img src={"https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/twitter-logo-circle.png"} alt="Twitter"/>
-              </a></li>
-              <li><a href="javascript:void(0)">
-                <img src={"https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/youtube-logo-circle.png"} alt="YouTube"/>
-              </a></li>
+              <li>Created by <a href="http://www.jeremydavis.co">Jeremy Davis</a></li>
+              <li>&copy; 2015</li>
             </ul>
 
           </div>

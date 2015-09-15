@@ -44,11 +44,6 @@ var MethodSelector = React.createClass( {
 					return {
 						value: recipe.id,
 						label: recipe.attributes.title,
-						ratio: recipe.attributes.Ratio,
-						coffee: recipe.attributes.Coffee,
-						water: recipe.attributes.Water,
-						yield: recipe.attributes.Yield
-
 					};
 				});
 
@@ -90,7 +85,6 @@ var MethodSelector = React.createClass( {
   },
 
 	onSettingsChange(data) {
-		console.log(data);
 		this.setState(data);
 	},
 

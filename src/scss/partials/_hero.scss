@@ -5,7 +5,7 @@
   $hero-image: '././../img/hero.jpg';
 
   @include background(url($hero-image), linear-gradient($gradient-angle, $hero-background-bottom, $hero-background-top), no-repeat $hero-background-top scroll);
-
+  margin-bottom: 3em;
 }
 
 .hero-chem {
@@ -15,7 +15,7 @@
   $hero-image: '././../img/chemex.jpg';
 
   @include background(url($hero-image), linear-gradient($gradient-angle, $hero-background-bottom, $hero-background-top), no-repeat $hero-background-top scroll);
-
+  margin-bottom: 1em;
 }
 
 .hero-fp {
@@ -25,7 +25,7 @@
   $hero-image: '././../img/french-press.jpg';
 
   @include background(url($hero-image), linear-gradient($gradient-angle, $hero-background-bottom, $hero-background-top), no-repeat $hero-background-top scroll);
-
+  margin-bottom: 1em;
 }
 
 .hero-v60 {
@@ -35,7 +35,7 @@
   $hero-image: '././../img/v60-home.jpg';
 
   @include background(url($hero-image), linear-gradient($gradient-angle, $hero-background-bottom, $hero-background-top), no-repeat $hero-background-top scroll);
-
+  margin-bottom: 1em;
 }
 
 .hero, .hero-chem, .hero-fp, .hero-v60 {
@@ -50,7 +50,6 @@
   background-size: cover;
   padding-bottom: 3em;
   height: 500px;
-  margin-bottom: 3em;
 
   .hero-logo img {
     height: 4em;

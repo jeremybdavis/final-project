@@ -16,10 +16,14 @@
       li.li-bottom {
         border-bottom: 2px solid black;
         padding: 0 0 5px 0;
-        width: 160px;
+        width: 200px;
       }
       li.li-last{
         padding: 5px 0 0 0;
+      }
+
+      strong {
+        font-weight: bolder;
       }
     }
 

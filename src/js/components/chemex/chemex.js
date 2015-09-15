@@ -24,9 +24,12 @@ class Chemex extends React.Component {
           <div className="ingredients">
             <h1>What You'll Need</h1>
             <ul>
-              <li>26 grams of Coffee</li>
-              <li>416 grams of Water</li>
-              <li>Yields 12oz</li>
+              <li>Scale</li>
+              <li>Grinder</li>
+              <li>Kettle</li>
+              <li><strong>26</strong> grams of Coffee</li>
+              <li className="li-bottom"><strong>416</strong> grams of Water</li>
+              <li className="li-last">Yields 12oz</li>
             </ul>
           </div>
 

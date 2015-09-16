@@ -1,52 +1,25 @@
 import React from 'react';
 
 class Settings extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      coffee: 0,
-      ratio: 0,
-      water: 0,
-      yielded: 0
-    };
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.recipe) {
-        this.setState({
-          coffee: nextProps.recipe.get('Coffee'),
-          ratio: nextProps.recipe.get('Ratio'),
-          water: nextProps.recipe.get('Water'),
-          yielded: nextProps.recipe.get('Yield')
-        });
-    }
-  }
-
   onChange() {
-    let data =  {
+    let data = {
       coffee: React.findDOMNode(this.refs.coffee).value,
       ratio: React.findDOMNode(this.refs.ratio).value
     };
 
-    this.setState({
-      coffee: data.coffee,
-      ratio: data.ratio,
-      water: data.ratio * data.coffee,
-      yielded: Math.round(((data.coffee * data.ratio) - (data.coffee * 2)) * 0.035274)
-    });
-
-    // this.props.onSettingsChange(this.state);
+    this.props.onSettingsChange(data);
   }
+
   render() {
     if (!this.props.recipe) {
       return <div>Please Select a Method</div>
     }
 
-    let ratio = this.state.ratio;
-    let coffee = this.state.coffee;
-    let water = this.state.water;
-    let yielded = this.state.yielded;
+    if(!this.props.settings){
+      return null;
+    }
+
+    let {ratio, coffee, water, yielded } = this.props.settings;
 
     return (
       <div className="method-settings">
@@ -75,11 +48,11 @@ class Settings extends React.Component {
         </p>
 
         <p>
-          Water {water}g
+          Water {ratio * coffee}g
         </p>
 
         <p>
-          Yield: {yielded}oz
+          Yield: {Math.round(((coffee * ratio) - (coffee * 2)) * 0.035274)}oz
         </p>
       </div>
     )
@@ -87,7 +60,8 @@ class Settings extends React.Component {
 }
 
 Settings.defaultProps = {
-  recipe: null
+  recipe: null,
+  settings: null
 };
 
 export default Settings;

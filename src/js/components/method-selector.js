@@ -27,9 +27,15 @@ var MethodSelector = React.createClass( {
 
 	componentDidMount: function() {
 		var CoffeeRecipe = Parse.Object.extend("CoffeeRecipe");
-		var query = new Parse.Query(CoffeeRecipe);
+		var userQuery = new Parse.Query(CoffeeRecipe);
+    var defaultQuery = new Parse.Query(CoffeeRecipe);
 
-		query.find({
+    userQuery.equalTo('user', Parse.User.current());
+    defaultQuery.equalTo('isDefault', true);
+
+    var recipesQuery = Parse.Query.or(userQuery, defaultQuery);
+
+		recipesQuery.find({
 			success: recipes => {
 				this.setState({
 					recipes: recipes,
@@ -99,9 +105,13 @@ var MethodSelector = React.createClass( {
 		}
 
 		let options = this.state.recipes.map(recipe => {
+      let label = recipe.get('title');
+      if (!recipe.get('isDefault')) {
+        label = `${label} - Custom`;
+      }
 			return {
 				value: recipe.id,
-				label: recipe.attributes.title,
+				label: label
 			};
 		});
 

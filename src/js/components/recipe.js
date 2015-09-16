@@ -15,8 +15,27 @@ class Recipe extends React.Component {
     });
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.recipe) {
+      this.setState({
+        stepOneTitle: nextProps.recipe.get('stepOneTitle'),
+        stepOne: nextProps.recipe.get('stepOne'),
+        startOne: nextProps.recipe.get('startOne'),
+        stopOne: nextProps.recipe.get('stopOne')
+      })
+    }
+  }
+
   render() {
+    if (!this.props.recipe) {
+      return <div>Please Select a Method</div>
+    }
+
     let {secondsElapsed} = this.state;
+    let stepOneTitle = this.state.stepOneTitle;
+    let stepOne = this.state.stepOne;
+    let startOne = this.state.startOne;
+    let stopOne = this.state.stopOne;
     let water = 0;
     let coffee = 0;
 
@@ -30,13 +49,10 @@ class Recipe extends React.Component {
           <Timer onTimerTick={this.onTimerTick.bind(this)}/>
         </div>
         <div className="details">
-          {(secondsElapsed !== 0 && secondsElapsed <= 45)
+          {(secondsElapsed !== this.props.recipe.get('startOne') && secondsElapsed <= this.props.recipe.get('stopOne'))
             ? <div className="steps">
-                <h5>Bloom</h5>
-                <p className="step">Lightly pour just enough water to saturate the coffee bed.
-                  Let bloom (or expand).
-                  This allows the water to distribute evenly, a crucial step to
-                  making a delicious cup. Try to avoid going over {coffee * 2}g</p>
+                <h5>{stepOneTitle}</h5>
+                <p className="step">{stepOne}</p>
               </div>
             : null
           }

@@ -56,7 +56,6 @@ var MethodSelector = React.createClass( {
   },
 
 	onSettingsChange(settings) {
-		console.log('testing', settings);
 		this.setState({
 			settings: settings
 		});
@@ -82,6 +81,7 @@ var MethodSelector = React.createClass( {
 
 		coffeeRecipe.save(null, {
 			success: function(coffeeRecipe) {
+        coffeeRecipe.save()
 				alert(`Thanks ${authedUser.get('username')}. Your recipe has been saved to your profile.`);
 			},
 			error: function(coffeeRecipe, error) {

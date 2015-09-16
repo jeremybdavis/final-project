@@ -13,7 +13,6 @@ import ProfileHandler from './components/views/profile';
 import SignInHandler from './components/views/sign-in';
 import SignUpHandler from './components/views/sign-up';
 import MethodSelectorHandler from './components/method-selector';
-import RecipeBuilderHandler from './components/recipe-builder';
 
 let routes = (
   <Route name="app" path="/" handler={App}>
@@ -25,7 +24,6 @@ let routes = (
     <Route name="v60" path="/v60" handler={V60Handler}/>
     <Route name="frenchPress" path="/frenchpress" handler={FrenchPressHandler} />
     <Route name="timer" path="/timer" handler={MethodSelectorHandler}/>
-    <Route name="builder" path="/new-recipe" handler={RecipeBuilderHandler}/>
   </Route>
 
 

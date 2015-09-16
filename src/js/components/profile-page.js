@@ -8,7 +8,6 @@ class ProfilePage extends React.Component {
     return (
       <div>
         <p>Welcome {authedUser.get('username')}. This is your dashboard.</p>
-        <Link to="builder">New Recipe</Link>
         <Link to="timer">Timer</Link>
       </div>
     )

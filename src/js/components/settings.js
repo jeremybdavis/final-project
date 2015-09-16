@@ -14,14 +14,12 @@ class Settings extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.recipe) {
-      if (!this.state.coffee) {
         this.setState({
           coffee: nextProps.recipe.get('Coffee'),
           ratio: nextProps.recipe.get('Ratio'),
           water: nextProps.recipe.get('Water'),
           yielded: nextProps.recipe.get('Yield')
         });
-      }
     }
   }
 

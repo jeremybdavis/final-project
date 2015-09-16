@@ -14,12 +14,14 @@ class Settings extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.recipe) {
-      this.setState({
-        coffee: nextProps.recipe.get('Coffee'),
-        ratio: nextProps.recipe.get('Ratio'),
-        water: nextProps.recipe.get('Water'),
-        yielded: nextProps.recipe.get('Yield')
-      });
+      if (!this.state.coffee) {
+        this.setState({
+          coffee: nextProps.recipe.get('Coffee'),
+          ratio: nextProps.recipe.get('Ratio'),
+          water: nextProps.recipe.get('Water'),
+          yielded: nextProps.recipe.get('Yield')
+        });
+      }
     }
   }
 
@@ -36,11 +38,11 @@ class Settings extends React.Component {
       yielded: Math.round(((data.coffee * data.ratio) - (data.coffee * 2)) * 0.035274)
     });
 
-    // this.props.onSettingsChange(this.state);
+    this.props.onSettingsChange(this.state);
   }
   render() {
     if (!this.props.recipe) {
-      return <div>Loading....</div>
+      return <div>Please Select a Method</div>
     }
 
     let ratio = this.state.ratio;

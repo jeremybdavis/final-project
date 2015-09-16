@@ -1,13 +1,13 @@
 import React, { PropTypes } from 'react'
-import User from '../../user';
+import Parse from '../../parse';
 import { Link } from 'react-router';
 import ProfilePage from '../profile-page';
 
 class Profile extends React.Component {
   render () {
     let message = "Please log in.";
-
-    if (User.loggedIn) {
+    let authedUser = Parse.User.current();
+    if (authedUser) {
       message = <ProfilePage/>;
     }
 

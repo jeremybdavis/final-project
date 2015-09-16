@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react';
 import Parse from '../../parse';
-import User from '../../user';
 
 class SignUp extends React.Component {
   onSubmit() {
@@ -27,7 +26,6 @@ class SignUp extends React.Component {
 
     user.signUp(null, {
       success: function(user) {
-        User.setData(user).login();
         self.context.router.transitionTo('dashboard');
       },
       error: function(user, error) {

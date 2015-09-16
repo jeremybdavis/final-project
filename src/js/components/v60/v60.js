@@ -13,7 +13,7 @@ class V60 extends React.Component {
             </a>
             <div className="hero-copy">
               <h1>V60</h1>
-              <p>0 to 100. Real Quick.</p>
+              <p>hchciurhviurbviurhiufh</p>
             </div>
           </div>
         </div>

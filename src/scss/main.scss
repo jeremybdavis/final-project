@@ -10,8 +10,6 @@ $dark-tan: #b3a79b;
 $tablet-width: 768px;
 $desktop-width: 1024px;
 
-@import "partials/method-page";
-
 @mixin tablet {
   @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
     @content;
@@ -35,6 +33,7 @@ body {
   @import "partials/program";
   @import "partials/sign-in";
   @import "partials/method-boxes";
+  @import "partials/method-page";
 }
 
 

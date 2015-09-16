@@ -1,14 +1,8 @@
 import React from 'react';
 import Select from 'react-select';
-import Parse from '../parse';
-import Timer from './timer';
 import Settings from './settings';
 import Recipe from './recipe';
-import User from '../user';
-
-function logChange() {
-	console.log.apply(console, [].concat(['Select value changed:'], Array.prototype.slice.apply(arguments)));
-}
+import Parse from '../parse';
 
 var MethodSelector = React.createClass( {
   propTypes: {
@@ -41,6 +35,8 @@ var MethodSelector = React.createClass( {
 					recipes: recipes,
 					selectValue: recipes[0]
 				});
+
+				this.refs.settings.onChange();
 			}
 		});
 	},
@@ -60,8 +56,37 @@ var MethodSelector = React.createClass( {
   },
 
 	onSettingsChange(settings) {
+		console.log('testing', settings);
 		this.setState({
 			settings: settings
+		});
+	},
+
+	saveRecipe() {
+		let authedUser = Parse.User.current();
+		if (!authedUser) {
+			alert("Please log in to use this feature.");
+			return;
+		}
+
+		let CoffeeRecipe = Parse.Object.extend("CoffeeRecipe");
+		let coffeeRecipe = new CoffeeRecipe();
+		let user = coffeeRecipe.relation('user');
+		user.add(authedUser);
+
+		coffeeRecipe.set("title", this.state.selectValue.get('title'));
+		coffeeRecipe.set("Ratio", Number(this.state.settings.ratio));
+		coffeeRecipe.set("Coffee", Number(this.state.settings.coffee));
+		coffeeRecipe.set("Water", Number(this.state.settings.water));
+		coffeeRecipe.set("Yield", Number(this.state.settings.yielded));
+
+		coffeeRecipe.save(null, {
+			success: function(coffeeRecipe) {
+				alert(`Thanks ${authedUser.get('username')}. Your recipe has been saved to your profile.`);
+			},
+			error: function(coffeeRecipe, error) {
+				alert('Failed to create new object, with error code: ' + error.message);
+			}
 		});
 	},
 
@@ -112,13 +137,10 @@ var MethodSelector = React.createClass( {
 									onSettingsChange={this.onSettingsChange}
 								/>
 
-							<div className="timer">
-								<Timer/>
-							</div>
-
 							<Recipe recipe={this.state.selectValue} settings={this.state.settings}/>
 						</div>
 
+					<button type="button" onClick={this.saveRecipe}>Save This Recipe</button>
 				</div>
 
 			</div>

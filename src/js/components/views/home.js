@@ -21,7 +21,7 @@ class Home extends React.Component {
         <div className="method-boxes">
           <div className="method-box">
             <Link to="chemex">
-              <img src={"img/chemex.jpg"} />
+              <img src={"img/chemex2.jpg"} />
               <div className="method-bg-color">
                 <div className="wi-100-h-100">
                   <div className="wi-100-h-50">

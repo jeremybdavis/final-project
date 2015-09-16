@@ -1,7 +1,6 @@
 import React from 'react';
 
 import Parse from '../../parse';
-import User from '../../user';
 
 class SignIn extends React.Component {
   onSubmit() {
@@ -18,7 +17,6 @@ class SignIn extends React.Component {
 
     Parse.User.logIn(data.username, data.password, {
       success: function(user) {
-        User.setData(user).login();
         self.context.router.transitionTo('profile');
       },
       error: function(user, error) {

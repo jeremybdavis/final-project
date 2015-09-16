@@ -9,6 +9,9 @@ var Timer = React.createClass({
       secondsElapsed: 0,
     };
   },
+  componentWillUnmount() {
+    this.handleStopClick();
+  },
   getSeconds() {
     return (
       '0' + this.state.secondsElapsed % 60
@@ -22,13 +25,13 @@ var Timer = React.createClass({
   },
 
   handleStartClick() {
-    var _this = this;
-
-    this.incrementer = setInterval(function () {
-      _this.setState({
-        secondsElapsed: (_this.state.secondsElapsed + 1)
+    this.incrementer = setInterval(() => {
+      this.setState({
+        secondsElapsed: (this.state.secondsElapsed + 1)
       });
-    }, 1000)
+
+      this.props.onTimerTick(this.state.secondsElapsed);
+    }, 1000, true)
   },
 
   handleStopClick() {

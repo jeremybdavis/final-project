@@ -18,10 +18,16 @@ class Recipe extends React.Component {
   componentWillReceiveProps(nextProps) {
     if (nextProps.recipe) {
       this.setState({
+        prepTitle: nextProps.recipe.get('prepTitle'),
+        prep: nextProps.recipe.get('prep'),
         stepOneTitle: nextProps.recipe.get('stepOneTitle'),
         stepOne: nextProps.recipe.get('stepOne'),
         startOne: nextProps.recipe.get('startOne'),
-        stopOne: nextProps.recipe.get('stopOne')
+        stopOne: nextProps.recipe.get('stopOne'),
+        stepTwoTitle: nextProps.recipe.get('stepTwoTitle'),
+        stepTwo: nextProps.recipe.get('stepTwo'),
+        startTwo: nextProps.recipe.get('startTwo'),
+        stopTwo: nextProps.recipe.get('stopTwo')
       })
     }
   }
@@ -32,10 +38,16 @@ class Recipe extends React.Component {
     }
 
     let {secondsElapsed} = this.state;
+    let prepTitle = this.state.prepTitle;
+    let prep = this.state.prep;
     let stepOneTitle = this.state.stepOneTitle;
     let stepOne = this.state.stepOne;
     let startOne = this.state.startOne;
     let stopOne = this.state.stopOne;
+    let stepTwoTitle = this.state.stepTwoTitle;
+    let stepTwo = this.state.stepTwo;
+    let startTwo = this.state.startTwo;
+    let stopTwo = this.state.stopTwo;
     let water = 0;
     let coffee = 0;
 
@@ -49,6 +61,15 @@ class Recipe extends React.Component {
           <Timer onTimerTick={this.onTimerTick.bind(this)}/>
         </div>
         <div className="details">
+
+          {(secondsElapsed === 0)
+            ? <div className="steps">
+                <h5>{prepTitle}</h5>
+                <p className="step">{prep}</p>
+              </div>
+            : null
+          }
+
           {(secondsElapsed !== this.props.recipe.get('startOne') && secondsElapsed <= this.props.recipe.get('stopOne'))
             ? <div className="steps">
                 <h5>{stepOneTitle}</h5>
@@ -57,13 +78,12 @@ class Recipe extends React.Component {
             : null
           }
 
-          {(secondsElapsed > 45 && secondsElapsed <= 180)
-            ? <p className="step">Starting from the center and working to the edge, pour slowly
-                in circles adding just enough water to raise slurry roughly halfway
-                up the cone. Keep adding water slowly in stages, submerging the crust
-                as you go. After crust has been covered, pour into the center,
-                raising the level if needed toward the end to add all water in time.
-                Try adding all water by 3:00</p>
+          {(secondsElapsed > this.props.recipe.get('startTwo') && secondsElapsed <= this.props.recipe.get('stopTwo'))
+
+            ? <div className="steps">
+                <h5>{stepTwoTitle}</h5>
+                <p className="step">{stepTwo}</p>
+              </div>
             : null
           }
 

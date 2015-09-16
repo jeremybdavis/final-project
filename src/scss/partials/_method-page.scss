@@ -9,7 +9,7 @@
     }
 
     @include desktop {
-      margin: 30px 100px;
+      margin: 30px 125px;
     }
 
     h1{
@@ -20,6 +20,11 @@
     .ingredients {
 
       margin: 0 0 15px 0;
+
+      @include desktop {
+        margin: 0 125px 15px 0;
+        float: left;
+      }
 
       li.li-bottom {
         border-bottom: 2px solid black;
@@ -36,13 +41,29 @@
     }
 
     .about {
+      margin: 0 0 15px 0;
 
+      @include desktop {
+        margin: 0 0 85px 0;
+      }
     }
 
     .brew {
 
       p {
         padding: 5px 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: #b3a79b;
+      }
+
+      h1 {
+
+        @include desktop {
+          text-align: center;
+        }
       }
 
       .step-num {
@@ -74,7 +95,7 @@
           display: block;
           font-size: 0.875em;
           letter-spacing: 1px;
-          margin: 15px 0;
+          margin: 25px 0;
           padding: 1em;
           text-align: center;
           text-transform: uppercase;

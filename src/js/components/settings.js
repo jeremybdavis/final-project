@@ -36,7 +36,7 @@ class Settings extends React.Component {
       yielded: Math.round(((data.coffee * data.ratio) - (data.coffee * 2)) * 0.035274)
     });
 
-    this.props.onSettingsChange(this.state);
+    // this.props.onSettingsChange(this.state);
   }
   render() {
     if (!this.props.recipe) {

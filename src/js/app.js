@@ -6,9 +6,9 @@ import App from './components/app';
 
 
 import HomeHandler from './components/views/home';
-import ChemexHandler from './components/chemex/chemex.js';
-import V60Handler from './components/v60/v60.js';
-import FrenchPressHandler from './components/french-press/french-press';
+import ChemexHandler from './components/methods/chemex.js';
+import V60Handler from './components/methods/v60.js';
+import FrenchPressHandler from './components/methods/french-press';
 import ProfileHandler from './components/views/profile';
 import SignInHandler from './components/views/sign-in';
 import SignUpHandler from './components/views/sign-up';

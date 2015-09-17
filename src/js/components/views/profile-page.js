@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import Parse from '../parse';
+import Parse from '../../parse';
 import { Link } from 'react-router';
 
 class ProfilePage extends React.Component {

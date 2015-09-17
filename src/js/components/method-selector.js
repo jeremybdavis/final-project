@@ -38,14 +38,19 @@ var MethodSelector = React.createClass( {
   },
 
 	componentDidMount: function() {
+    var user = Parse.User.current();
 		var CoffeeRecipe = Parse.Object.extend("CoffeeRecipe");
 		var userQuery = new Parse.Query(CoffeeRecipe);
     var defaultQuery = new Parse.Query(CoffeeRecipe);
+    var recipesQuery;
 
-    userQuery.equalTo('user', Parse.User.current());
     defaultQuery.equalTo('isDefault', true);
-
-    var recipesQuery = Parse.Query.or(userQuery, defaultQuery);
+    if (user) {
+      userQuery.equalTo('user', user);
+      recipesQuery = Parse.Query.or(userQuery, defaultQuery);
+    } else {
+      recipesQuery = defaultQuery
+    }
 
 		recipesQuery.find({
 			success: recipes => {

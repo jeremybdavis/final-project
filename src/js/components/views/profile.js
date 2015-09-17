@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import Parse from '../../parse';
 import { Link } from 'react-router';
-import ProfilePage from '../profile-page';
+import ProfilePage from './profile-page';
 
 class Profile extends React.Component {
   render () {

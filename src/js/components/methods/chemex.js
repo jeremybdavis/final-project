@@ -2,8 +2,6 @@ import React from 'react';
 import Router from 'react-router';
 import { DefaultRoute, Link, Route, RouteHandler } from 'react-router';
 
-import ChemexRecipe from './chemex-recipe';
-
 class Chemex extends React.Component {
   render() {
     return(

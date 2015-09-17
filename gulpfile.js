@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-var jscs = require('gulp-jscs');
+// var jscs = require('gulp-jscs');
 var sass = require('gulp-sass');
 var browserify = require('browserify');
 var babelify = require('babelify');
@@ -8,13 +8,13 @@ var del = require('del');
 var Karma = require('karma');
 var ghPages = require('gulp-gh-pages');
 
-gulp.task('lint', function() {
-  return gulp.src('./src/**/*.js')
-    .pipe(jscs({
-       esnext: true,
-       preset: 'airbnb'
-     }))
-});
+// gulp.task('lint', function() {
+//   return gulp.src('./src/**/*.js')
+//     .pipe(jscs({
+//        esnext: true,
+//        preset: 'airbnb'
+//      }))
+// });
 
 gulp.task('babel', function () {
   browserify({
@@ -35,9 +35,10 @@ gulp.task('sass', function () {
 
 
 gulp.task('watch', function() {
-  gulp.watch(['./src/**/*.js'], ['lint','babel']);
+  gulp.watch(['./src/**/*.js'], ['babel']);
   gulp.watch(['./src/scss/*.scss'], ['sass']);
   gulp.watch(['./src/index.html'], ['copy']);
+  gulp.watch(['./src/method.html'], ['copy']);
 });
 
 gulp.task('copy', function () {
@@ -45,6 +46,9 @@ gulp.task('copy', function () {
     .pipe(gulp.dest('dist/img/'));
 
   gulp.src('./src/index.html')
+    .pipe(gulp.dest('dist'));
+
+  gulp.src('./src/method.html')
     .pipe(gulp.dest('dist'));
 });
 
@@ -64,7 +68,7 @@ gulp.task('deploy', function() {
 
 gulp.task('default', [
   'watch',
-  'lint',
+  // 'lint',
   'babel',
   'sass',
   'copy'

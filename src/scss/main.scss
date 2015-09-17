@@ -1,7 +1,11 @@
 @import "lib/bourbon/bourbon";
 @import "lib/neat/neat";
 
-@import "partials/nav";
+$light-blue: #aab7bf;
+$dark-grey: #766c6d;
+$light-tan: #ecded2;
+$tan: #dfc69f;
+$dark-tan: #b3a79b;
 
 $tablet-width: 768px;
 $desktop-width: 1024px;
@@ -16,6 +20,20 @@ $desktop-width: 1024px;
   @media (min-width: #{$desktop-width}) {
     @content;
   }
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+
+  @import "partials/nav";
+  @import "partials/hero";
+  @import "partials/flex";
+  @import "partials/expand";
+  @import "partials/footer";
+  @import "partials/program";
+  @import "partials/sign-in";
+  @import "partials/method-boxes";
+  @import "partials/method-page";
 }
 
 

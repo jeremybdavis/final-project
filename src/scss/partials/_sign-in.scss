@@ -37,10 +37,9 @@
       margin: 0 10px 20px;
 
       button {
-        background-color: #ffab23;
-        background-image: -webkit-gradient(linear,0 0,0 100%,from(#fe6),to(#ffab23));
-        border: 1px solid;
-        border-color: #cbbd55 #c9a239 #ca8a21;
+        background-color: #ecded2;
+        background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#dfc69f), to(#ecded2));
+        border: 1px solid #b3a79b;
         width: 100%;
         max-width: 400px;
         border-radius: 5px;
@@ -53,6 +52,7 @@
         text-decoration: none;
         font-size: 18px;
         padding: 13px 10px 12px;
+        cursor: pointer;
       }
     }
 }

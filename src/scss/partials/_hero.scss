@@ -4,6 +4,14 @@
   $gradient-angle: 10deg;
   $hero-image: '././../img/hero.jpg';
 
+  .hero-inner {
+    .hero-copy {
+      h1{
+        font-size: 1.9em;
+      }
+    }
+  }
+
   @include background(url($hero-image), linear-gradient($gradient-angle, $hero-background-bottom, $hero-background-top), no-repeat $hero-background-top scroll);
   margin-bottom: 3em;
 }
@@ -13,6 +21,14 @@
   $hero-background-bottom: #20392B;
   $gradient-angle: 10deg;
   $hero-image: '././../img/chemex.jpg';
+
+  .hero-inner {
+    .hero-copy {
+      h1{
+        font-size: 3em;
+      }
+    }
+  }
 
   @include background(url($hero-image), linear-gradient($gradient-angle, $hero-background-bottom, $hero-background-top), no-repeat $hero-background-top scroll);
   margin-bottom: 1em;
@@ -24,6 +40,14 @@
   $gradient-angle: 10deg;
   $hero-image: '././../img/french-press.jpg';
 
+  .hero-inner {
+    .hero-copy {
+      h1{
+        font-size: 3em;
+      }
+    }
+  }
+
   @include background(url($hero-image), linear-gradient($gradient-angle, $hero-background-bottom, $hero-background-top), no-repeat $hero-background-top scroll);
   margin-bottom: 1em;
 }
@@ -33,6 +57,14 @@
   $hero-background-bottom: #20392B;
   $gradient-angle: 10deg;
   $hero-image: '././../img/v60-home.jpg';
+
+  .hero-inner {
+    .hero-copy {
+      h1{
+        font-size: 3em;
+      }
+    }
+  }
 
   @include background(url($hero-image), linear-gradient($gradient-angle, $hero-background-bottom, $hero-background-top), no-repeat $hero-background-top scroll);
   margin-bottom: 1em;
@@ -68,7 +100,6 @@
 
       h1 {
         color: $hero-color;
-        font-size: 1.9em;
         margin-bottom: 0.5em;
 
         @include media($large-screen) {

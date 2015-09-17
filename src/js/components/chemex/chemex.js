@@ -11,11 +11,11 @@ class Chemex extends React.Component {
         <div className="hero-chem">
           <div className="hero-inner">
             <a href="" className="hero-logo">
-              <img src={"https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png"} alt="Logo Image"/>
+              <img src={"img/coffee-beans.png"} alt="Logo Image"/>
             </a>
             <div className="hero-copy">
               <h1>Chemex</h1>
-              <p></p>
+              <p>Brewing Guide</p>
             </div>
           </div>
         </div>

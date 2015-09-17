@@ -10,7 +10,7 @@
   $centered-navigation-color-hover: #aab7bf;
   $centered-navigation-height: 60px;
   $centered-navigation-item-padding: 1em;
-  $centered-navigation-submenu-padding: 3em;
+  $centered-navigation-submenu-padding: 2em;
   $centered-navigation-submenu-width: 12em;
   $centered-navigation-item-nudge: 2.2em;
   $horizontal-bar-mode: $large-screen;
@@ -102,7 +102,7 @@
     display: block;
     line-height: $centered-navigation-height;
     overflow: hidden;
-    padding-right: $centered-navigation-submenu-padding;
+    padding: 0 2em;
     text-align: right;
     width: 100%;
     z-index: 9999;

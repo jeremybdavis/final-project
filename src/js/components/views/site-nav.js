@@ -26,7 +26,7 @@ class SiteNav extends React.Component {
       <header className="centered-navigation" role="banner">
         <div className="centered-navigation-wrapper">
           <Link to="app" className="mobile-logo">
-            <img src={"https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_3_dark.png"} alt="Logo image"/>
+            <img src={"./img/coffee-mug.png"} alt="Logo image"/>
           </Link>
           <a href="javascript:void(0)" id="js-centered-navigation-mobile-menu" className="centered-navigation-mobile-menu">MENU</a>
           <nav role="navigation">
@@ -35,7 +35,7 @@ class SiteNav extends React.Component {
               <li className="nav-link"><Link to="profile">Profile</Link></li>
               <li className="nav-link logo">
                 <Link to="app" className="logo">
-                  <img src={"https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_3_dark.png"} alt="Logo image"/>
+                  <img src={"./img/coffee-mug.png"} alt="Logo image"/>
                 </Link>
               </li>
               <li className="nav-link"><Link to="signin">Sign In</Link></li>

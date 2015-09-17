@@ -139,8 +139,6 @@ var MethodSelector = React.createClass( {
       stopTwo: Number(this.state.selectValue.get('stopTwo'))
     };
 
-    console.log(data);
-
 		coffeeRecipe.set(data);
 		coffeeRecipe.save(null, {
 			success: (recipe) => {

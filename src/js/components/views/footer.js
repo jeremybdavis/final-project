@@ -9,7 +9,7 @@ class Footer extends React.Component {
       <footer className="footer-2" role="contentinfo">
 
         <div className="footer-logo">
-          <img src={"https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png"} alt="Logo image"/>
+          <img src={"./img/coffee-mug-white.png"} alt="Logo image"/>
         </div>
 
           <ul>

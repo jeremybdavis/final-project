@@ -7,8 +7,8 @@ class ProfilePage extends React.Component {
     let authedUser = Parse.User.current();
     return (
       <div>
-        <p>Welcome {authedUser.get('username')}. This is your dashboard.</p>
-        <Link to="timer">Timer</Link>
+        <p>Welcome {authedUser.get('username')}. Thanks for signing up and participating in the beta of this project! Forgive the mess. This page will one day serve as your dashboard and profile page. Thanks for your patience.</p>
+        <Link to="timer">Now get off this ugly page and start making coffee.</Link>
       </div>
     )
   }

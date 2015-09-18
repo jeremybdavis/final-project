@@ -203,8 +203,6 @@ var MethodSelector = React.createClass( {
 
 							</Select>
 
-							<h3>Recommended Settings</h3>
-
 								<Settings
 									ref="settings"
 									recipe={this.state.selectValue}
@@ -212,10 +210,12 @@ var MethodSelector = React.createClass( {
 									onSettingsChange={this.onSettingsChange}
 								/>
 
+              <button type="button" className="save-btn" onClick={this.updateOrCreate}>Save This Recipe</button>
+
 							<Recipe recipe={this.state.selectValue} settings={this.state.settings}/>
 						</div>
 
-					<button type="button" onClick={this.updateOrCreate}>Save This Recipe</button>
+
 				</div>
 
 			</div>

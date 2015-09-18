@@ -32,7 +32,7 @@ class SiteNav extends React.Component {
           <nav role="navigation">
             <ul id="js-centered-navigation-menu" className="centered-navigation-menu show">
               <li className="nav-link"><Link to="app">Home</Link></li>
-              <li className="nav-link"><Link to="profile">Profile</Link></li>
+              <li className="nav-link"><Link to="timer">Timer</Link></li>
               <li className="nav-link logo">
                 <Link to="app" className="logo">
                   <img src={"./img/coffee-mug.png"} alt="Logo image"/>

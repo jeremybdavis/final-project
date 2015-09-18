@@ -13,21 +13,59 @@ class V60 extends React.Component {
             </a>
             <div className="hero-copy">
               <h1>V60</h1>
-              <p>hchciurhviurbviurhiufh</p>
+              <p>Brewing Guide</p>
             </div>
           </div>
         </div>
 
           <section className="main-content">
+            <div className="ingredients">
+              <h1>What You'll Need</h1>
+              <ul>
+                <li>Scale</li>
+                <li>Grinder</li>
+                <li>Kettle</li>
+                <li><strong>25</strong> grams of Coffee</li>
+                <li className="li-bottom"><strong>400</strong> grams of Water</li>
+                <li className="li-last">Yields 12oz</li>
+              </ul>
+            </div>
 
             <div className="about">
               <h1>About</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio mollitia fugiat facilis enim accusamus quisquam aut, repellendus incidunt quod optio facere labore illo numquam ipsum beatae vero debitis, fugit excepturi.</p>
+              <p>The V60 is similar to other pour over brewing methods, but it's unique design help it stand apart. It's wide body and raised, spiraled ribs help the coffee pass evenly through the filter. The V60 brews quickly and creates a smooth, balanced cup.</p>
             </div>
 
             <div className="brew">
               <h1>Brew Guide</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <div className="step-num">
+                  <h2>Step 1</h2>
+                  <h3>Prepare Ingredients</h3>
+                </div>
+                <p>Set V60 on top of mug or caraffe. Place filter in V60 and bring water to a boil. While water is heating up, Weigh out 25g of coffee</p>
+                <p>Rinse filter with the hot water and discard water. Doing this will help remove any paper taste from the filter, as well as heat up the V60.</p>
+
+                <div className="step-num">
+                  <h2>Step 2</h2>
+                  <h3>Grind and Weigh Coffee</h3>
+                </div>
+                <p>Grind coffee on a medium fine setting (Finer than Chemex).</p>
+                <p>Set V60 on scale and tare to 0. Weigh out 25g of ground coffee into the filter, and tare scale back to 0.</p>
+
+                <div className="step-num">
+                  <h2>Step 3</h2>
+                  <h3>Bloom</h3>
+                </div>
+                <p>With water at a boil, remove and let settle for 10-15 seconds. Start your timer (<Link to="timer">click here to use ours</Link>) and pour just enough water to fully saturate the grounds. Let bloom for 30 more seconds.</p>
+                <p>Allowing the coffee to bloom, or expand, helps allow the water to disperse evenly across all grounds, an important step to producing a delicious cup.</p>
+
+                <div className="step-num">
+                  <h2>Step 4</h2>
+                  <h3>Pour</h3>
+                </div>
+                <p>Starting from the center out to the edges, pour steadily in a clockwise motion until water has raised about halfway up the cone.</p>
+                <p>Continue adding water in stages, submerging the crust as you go.</p>
+                <p>Once you've reached 400g of water, let drain. Final brew time should be somewhere around 2:30.</p>
             </div>
 
             <div className="timer-button">

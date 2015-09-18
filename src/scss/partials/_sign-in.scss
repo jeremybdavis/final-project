@@ -17,11 +17,13 @@
     border: none;
 
     @include tablet {
-      margin: 0 240px 10px;
+      margin: 0 auto 10px;
+      max-width: 400px;
     }
 
     @include desktop {
-      margin: 0 440px 10px;
+      margin: 0 auto 10px;
+      max-width: 400px;
     }
 
     .password {

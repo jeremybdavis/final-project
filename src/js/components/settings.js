@@ -12,7 +12,7 @@ class Settings extends React.Component {
 
   render() {
     if (!this.props.recipe) {
-      return <div>Please Select a Method</div>
+      return <div><img src={"./img/loader.gif"}></img></div>
     }
 
     if(!this.props.settings){

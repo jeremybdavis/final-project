@@ -36,7 +36,7 @@ class Settings extends React.Component {
         </p>
 
         <p>
-          Coffee
+          Coffee:
           <input
             ref="coffee"
             type="number"
@@ -48,7 +48,7 @@ class Settings extends React.Component {
         </p>
 
         <p>
-          Water {ratio * coffee}g
+          Water: {ratio * coffee}g
         </p>
 
         <p>

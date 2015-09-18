@@ -27,7 +27,11 @@ class Recipe extends React.Component {
         stepTwoTitle: nextProps.recipe.get('stepTwoTitle'),
         stepTwo: nextProps.recipe.get('stepTwo'),
         startTwo: nextProps.recipe.get('startTwo'),
-        stopTwo: nextProps.recipe.get('stopTwo')
+        stopTwo: nextProps.recipe.get('stopTwo'),
+        stepThreeTitle: nextProps.recipe.get('stepThreeTitle'),
+        stepThree: nextProps.recipe.get('stepThree'),
+        startThree: nextProps.recipe.get('startThree'),
+        stopThree: nextProps.recipe.get('stopThree')
       })
     }
   }
@@ -48,6 +52,12 @@ class Recipe extends React.Component {
     let stepTwo = this.state.stepTwo;
     let startTwo = this.state.startTwo;
     let stopTwo = this.state.stopTwo;
+    let stepThreeTitle = this.state.stepThreeTitle;
+    let stepThree = this.state.stepThree;
+    let startThree = this.state.startThree;
+    let stopThree = this.state.stopThree;
+    let stepFourTitle = this.state.stepFourTitle;
+    let stepFour = this.state.stepFour;
     let water = 0;
     let coffee = 0;
 
@@ -57,9 +67,7 @@ class Recipe extends React.Component {
     }
     return(
       <div className="recipe">
-        <div className="timer">
-          <Timer onTimerTick={this.onTimerTick.bind(this)}/>
-        </div>
+
         <div className="details">
 
           {(secondsElapsed === 0)
@@ -87,17 +95,28 @@ class Recipe extends React.Component {
             : null
           }
 
-          {(secondsElapsed > 180 && secondsElapsed <= 240)
-            ? <p className="step">Once you've added {water}g of water, let drain. Aim for
-                as flat of a bed as possible. Final brew time should be in the 3:30
-                - 4:00 range.</p>
+          {(secondsElapsed > this.props.recipe.get('startThree') && secondsElapsed <= this.props.recipe.get('stopThree'))
+
+            ? <div className="steps">
+                <h5>{stepThreeTitle}</h5>
+                <p className="step">{stepThree}</p>
+              </div>
             : null
           }
 
-          {(secondsElapsed > 240)
-            ? <p className="step">Finished. Enjoy!</p>
+
+
+          {(secondsElapsed > this.props.recipe.get('stopThree'))
+            ? <div className="steps">
+                <h5>{stepFourTitle}</h5>
+                <p className="step">{stepFour}</p>
+              </div>
             : null
           }
+        </div>
+
+        <div className="timer">
+          <Timer onTimerTick={this.onTimerTick.bind(this)}/>
         </div>
       </div>
     )

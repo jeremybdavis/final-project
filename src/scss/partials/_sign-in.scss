@@ -16,6 +16,14 @@
     font-size: 14px;
     border: none;
 
+    @include tablet {
+      margin: 0 240px 10px;
+    }
+
+    @include desktop {
+      margin: 0 440px 10px;
+    }
+
     .password {
       border-top: 1px solid #e8e8e8;
     }
@@ -35,6 +43,10 @@
     .log-btn {
       text-align: center;
       margin: 0 10px 20px;
+
+      @include desktop {
+        margin: 0 0 295px 0;
+      };
 
       button {
         background-color: #ecded2;

@@ -1,6 +1,14 @@
 .program {
   margin: 25px;
 
+  @include tablet {
+    margin: 50px 90px;
+  }
+
+  @include desktop {
+    margin: 50px 200px;
+  }
+
   .program-content{
 
     h1 {
@@ -17,7 +25,46 @@
 
       p {
         font-weight: 300;
+        font-size: 1.1rem;
         margin: 0 0 10px 0;
+      }
+
+      input {
+        width: 60px;
+        padding: 10px;
+        margin: 0 0 0 10px;
+        font-size: 0.9rem;
+      }
+
+      h5 {
+        font-size: 1.2rem;
+        margin: 0 0 10px 0;
+      }
+
+      .timer-content {
+        text-align: center;
+        .timer {
+          font-size: 3.5rem;
+          font-weight: 200;
+          margin: 25px 0 15px 0;
+
+        }
+
+        button {
+          background: #8d9ea9;
+          border-radius: 6px;
+          border: none;
+          color: white;
+          font-size: 1em;
+          letter-spacing: 1px;
+          padding: 1em;
+          cursor: pointer;
+        }
+
+        .reset-btn {
+          margin: 0 0 0 10px;
+        }
+
       }
 
     }
@@ -33,29 +80,32 @@
       margin: 0 0 15px 0;
     }
 
-    .timer-content {
+    .save-btn {
+      text-decoration: none;
+      background: darken( $light-blue, 10% );
+      border-radius: 6px;
+      border: none;
+      color: white;
+      display: block;
+      font-size: 0.875em;
+      letter-spacing: 1px;
+      margin: 25px 0;
+      padding: 1em;
       text-align: center;
-      .timer {
-        font-size: 3.5rem;
-        font-weight: 200;
-        margin: 25px 0 15px 0;
+      text-transform: uppercase;
+      width: 100%;
+      cursor: pointer;
 
+      @include tablet {
+        width: 40%;
       }
 
-      button {
-        font-size: 25px;
-        border-radius: 5px;
-        margin: 0 0 15px 0;
-        cursor: pointer;
+      @include desktop {
+        width: 30%;
       }
 
-      .reset-btn {
-        margin: 0 0 0 10px;
-      }
-
-      h5 {
-        font-size: 1.3rem;
-        padding: 0 0 5px 0;
+      &:hover {
+        background: darken($light-blue, 5% );
       }
     }
 

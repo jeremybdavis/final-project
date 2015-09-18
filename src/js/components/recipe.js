@@ -31,7 +31,9 @@ class Recipe extends React.Component {
         stepThreeTitle: nextProps.recipe.get('stepThreeTitle'),
         stepThree: nextProps.recipe.get('stepThree'),
         startThree: nextProps.recipe.get('startThree'),
-        stopThree: nextProps.recipe.get('stopThree')
+        stopThree: nextProps.recipe.get('stopThree'),
+        stepFourTitle: nextProps.recipe.get('stepFourTitle'),
+        stepFour: nextProps.recipe.get('stepFour')
       })
     }
   }

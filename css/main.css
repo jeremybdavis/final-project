@@ -646,10 +646,12 @@ body {
     border: none; }
     @media (min-width: 768px) and (max-width: 1023px) {
       body .sign-in-page .inputs, body .sign-up-page .inputs {
-        margin: 0 240px 10px; } }
+        margin: 0 auto 10px;
+        max-width: 400px; } }
     @media (min-width: 1024px) {
       body .sign-in-page .inputs, body .sign-up-page .inputs {
-        margin: 0 440px 10px; } }
+        margin: 0 auto 10px;
+        max-width: 400px; } }
     body .sign-in-page .inputs .password, body .sign-up-page .inputs .password {
       border-top: 1px solid #e8e8e8; }
   body .sign-in-page input, body .sign-up-page input {

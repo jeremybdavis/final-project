@@ -141,7 +141,13 @@ var MethodSelector = React.createClass( {
       stepTwoTitle: this.state.selectValue.get('stepTwoTitle'),
       stepTwo: this.state.selectValue.get('stepTwo'),
       startTwo: Number(this.state.selectValue.get('startTwo')),
-      stopTwo: Number(this.state.selectValue.get('stopTwo'))
+      stopTwo: Number(this.state.selectValue.get('stopTwo')),
+      stepThreeTitle: this.state.selectValue.get('stepThreeTitle'),
+      stepThree: this.state.selectValue.get('stepThree'),
+      startThree: Number(this.state.selectValue.get('startThree')),
+      stopThree: Number(this.state.selectValue.get('stopThree')),
+      stepFourTitle: this.state.selectValue.get('stepFourTitle'),
+      stepFour: this.state.selectValue.get('stepFour')
     };
 
 		coffeeRecipe.set(data);

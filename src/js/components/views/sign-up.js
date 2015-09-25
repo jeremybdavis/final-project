@@ -26,7 +26,7 @@ class SignUp extends React.Component {
 
     user.signUp(null, {
       success: function(user) {
-        self.context.router.transitionTo('dashboard');
+        self.context.router.transitionTo('profile');
       },
       error: function(user, error) {
         // Show the error message somewhere and let the user try again.
